@@ -43,8 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Please fill in all required fields.');
         return;
       }
-      document.getElementById('form-fields').style.display = 'none';
-      document.getElementById('form-success').classList.add('show');
+      const data = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          document.getElementById('form-fields').style.display = 'none';
+          document.getElementById('form-success').classList.add('show');
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      }).catch(function () {
+        alert('Something went wrong. Please check your connection and try again.');
+      });
     });
   }
 
