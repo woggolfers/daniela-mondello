@@ -1,0 +1,156 @@
+/* ============================================================
+   BLOG ARTICLE STYLES
+   ============================================================ */
+
+.blog-hero {
+  background: linear-gradient(135deg, var(--sage-dk) 0%, var(--sage) 100%);
+  padding: 56px 0 48px;
+  color: white;
+}
+.blog-hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 720px;
+  margin-top: 14px;
+}
+.blog-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.blog-date-hero { font-size: 12px; color: rgba(255,255,255,.6); }
+.blog-hero-sub  { font-size: 14px; color: rgba(255,255,255,.7); margin-top: 10px; }
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.blog-article { padding: 56px 0; background: var(--cream); }
+.blog-layout  {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── ARTICLE CONTENT ─────────────────────────────────────── */
+.blog-content { min-width: 0; }
+
+.blog-lead {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--sage-dk);
+  font-weight: 400;
+  margin-bottom: 28px;
+  padding-left: 20px;
+  border-left: 3px solid var(--sage);
+}
+
+.blog-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--sage-dk);
+  margin: 32px 0 12px;
+}
+
+.blog-content p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.blog-content ul, .blog-content ol {
+  padding-left: 22px;
+  margin-bottom: 20px;
+}
+.blog-content li {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.blog-content strong { color: var(--txt); }
+
+/* ── DISCLAIMER ─────────────────────────────────────────── */
+.blog-disclaimer {
+  background: var(--sage-lt);
+  border-left: 3px solid var(--sage);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 36px 0 32px;
+}
+
+/* ── AUTHOR BOX ─────────────────────────────────────────── */
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+.blog-author-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--sage);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: white;
+  flex-shrink: 0; overflow: hidden;
+}
+.blog-author-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.blog-author-name  { font-weight: 600; color: var(--sage-dk); font-size: 15px; }
+.blog-author-cred  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.blog-author-link  { font-size: 12px; color: var(--sage); margin-top: 4px; display: inline-block; }
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.blog-sidebar { position: sticky; top: 82px; display: flex; flex-direction: column; gap: 20px; }
+
+.sidebar-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+.sidebar-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sage-dk);
+  margin-bottom: 10px;
+}
+.sidebar-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.sidebar-link {
+  display: block;
+  font-size: 13px;
+  color: var(--sage);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: color .15s;
+}
+.sidebar-link:last-child { border-bottom: none; }
+.sidebar-link:hover { color: var(--sage-dk); }
+
+/* ── MORE ARTICLES ──────────────────────────────────────── */
+.blog-more { background: white; padding: 56px 0; }
+.blog-more-link { font-size: 12px; color: var(--sage); font-weight: 500; }
+.blog-more-link:hover { text-decoration: underline; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .blog-layout { grid-template-columns: 1fr; }
+  .blog-sidebar { position: static; }
+  .blog-hero h1 { font-size: 30px; }
+}
